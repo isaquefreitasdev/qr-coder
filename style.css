@@ -3,23 +3,27 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Roboto;
+    font-size: 1em;
 }
 
 body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    height: 100dvh;
     background-color: blue;
+    position: fixed:
 }
 
 .container {
     background-color: #fff;
-    height: 260px;
-    width: 400px;
+    padding: 30px;
     border-radius: 10px;
-    padding: 20px;
+    height: 280px;
+    width: 100%; /* ISSO DEIXA O CONTAINER RESPONSIVO */
+    max-width: 500px;
     transition: 0.2s;
+    margin-inline: 20px; /* ISSO RESOLVA O PROBLEMA QUE MENCIONEI LÁ NO LINKEDIN*/
 }
 
 .container.active {
@@ -28,17 +32,18 @@ body {
 
 #qr-header {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 #qr-header h1 {
     font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 10px;
 }
 
 #qr-header p {
     color: #444;
-    font-size: 0.9rem;
 }
 
 .container #qr-form {
@@ -52,12 +57,16 @@ body {
     border: none;
     border-radius: 5px;
     outline: none;
-    font-size: 0.9rem;
 }
 
 #qr-form input {
     border: 1px solid #777;
     padding: 10px 15px;
+}
+
+#qr-form input:focus {
+    border: 2px solid black; /* PERMITE QUE O IMPUT SEJA ACESSIVEL PELA TECLA TAB */
+    transition: 0.4s;
 }
 
 #qr-form button {
@@ -73,7 +82,13 @@ body {
 #qr-form button:hover {
     opacity: 1;
 }
-#qr-form #download-link{
+
+#qr-form button:focus {
+    border: 2px solid blue;/* PERMITE QUE O BOTÃO SEJA ACESSIVEL PELA TECLA TAB */
+    transition: 0.4s;
+}
+
+#qr-form #download-link {
     text-decoration: none;
     background-color: #086824;
     margin-top: 20px;
@@ -102,4 +117,10 @@ body {
     opacity: 1;
     pointer-events: auto;
     transition: 0.5s;
+}
+
+.container #qr-code img {
+    width: 100%;
+    max-width: 150px;
+    height: 150px;
 }
