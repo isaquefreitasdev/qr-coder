@@ -15,15 +15,18 @@ body {
 
 .container {
     background-color: #fff;
-    height: 260px;
-    width: 400px;
+    max-height: 260px;
+    max-width: 400px;
+    width: 100%;
     border-radius: 10px;
     padding: 20px;
     transition: 0.2s;
+    padding-inline: 20px;
+    height: 100%;
 }
 
 .container.active {
-    height: 500px;
+    max-height: 500px;
 }
 
 #qr-header {
@@ -69,6 +72,11 @@ body {
     opacity: 0.9;
     transition: 0.4s;
 }
+.error{
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
 
 #qr-form button:hover {
     opacity: 1;
@@ -102,4 +110,31 @@ body {
     opacity: 1;
     pointer-events: auto;
     transition: 0.5s;
+}
+@media (max-width:472px) {
+    .container{
+        width:70%;
+        height:20% !important ;
+    }
+    .container.active{
+        height: 50%;
+    }
+    h1{
+        font-size: 1.3rem !important;
+    }
+    p{
+        font-size: 0.8rem;
+    }
+    button,input{
+        width: 100% !important;
+    }
+    img{
+        width: 100px;
+    }
+   #qr-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
 }
